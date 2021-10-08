@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% include 'includes/_navbar.html' %}
+{% block body %}
+
+
+<div class="form-group">
+    <form action="{{url_for('store.add_new_flower')}}" method ='post'>
+        <table class="table table-striped">
+            <tr>
+                <th>Flower</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="new_flower" value={{request.form.new_flower}}></td>
+                <td><input type="text" name="new_quantity" value={{request.form.new_quantity}}></td>
+                <td><input type="text" name="new_price" value={{request.form.new_price}}></td>
+            </tr>
+            <tr>
+                <td><button type="submit" class="btn btn-primary">Add New Flower</button></td>
+                <td><a href="/add_flower"><input type="button" class="btn btn-primary" value="Back"></a></td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+{% endblock %}
